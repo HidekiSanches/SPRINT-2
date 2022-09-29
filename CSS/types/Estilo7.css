@@ -1,0 +1,71 @@
+.banner{
+    color: white;
+    padding:  40px 0;
+    height: 400px;
+    background-image: url("assets/banner.jpg");
+    background-size: cover;
+    border-radius: 10px;
+
+ }
+
+ .banner .container{
+    height: 400px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.banner p{
+    font-size: 30px;
+    width: 280px;
+    margin-bottom: 200px;
+    color: white;
+ }
+
+ .banner .container span{
+    font-weight: 800;
+    color: white;
+ }
+
+ 
+
+.social {
+    margin-top: 10px;
+    background-color: rgb(43,47,52,90%);
+    height: 300px;
+    border-radius: 10px;
+    border-bottom: solid 3px #23272a;
+    border-right: solid 3px #23272a;
+ }
+
+ .box img {
+    width: 170px;
+ }
+
+.social .container .boxes {
+    display: flex;
+}
+
+.box{
+    margin: 25px 30px 10px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #23272a;
+    border-radius: 10px;
+    padding: 10px 10px;
+    border-bottom:black solid 2px;
+    border-right:black solid 2px;
+
+}
+
+.social p{
+    color: white;
+    text-align: center;
+}
+.social h4{
+    margin-top: 10px;
+    color: white;
+}
+
