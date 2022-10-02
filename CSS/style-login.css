@@ -50,6 +50,7 @@ input {
     margin-bottom: 40px;
     color: 	#ffffff;
     background-color: rgb(43,47,52,80%);
+    border-radius: 4px;
 }
 .box input:focus {
     border-color: #039f00;

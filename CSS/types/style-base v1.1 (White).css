@@ -60,12 +60,15 @@ a{
 }
 
 .footer {
-    background-color: #039f00;
+    background-color: white;
     height: 100px;
     display: flex;
 }
-
 .footer .container{
     display: flex;
     justify-content: center;
+}
+
+.footer .container p {
+    color: #039f00;
 }

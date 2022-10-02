@@ -10,7 +10,7 @@ body {
     background-color: white;
 }
 .header {
-    color: #039f00;
+    background-color: white;
 }
 .container {
     width: 80%;
@@ -20,7 +20,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
-h1 {
+.header .container h1 {
     margin-top: 20px;
     color: #039f00;
     padding: 5px 15px;
@@ -53,18 +53,19 @@ a{
     border-bottom: #039f00 2px solid;
 }
 .background {
-    height: 700px;
+    height: 900px;
     padding: 5vh;
     background-image: linear-gradient( white, #039f00);
     background-size: cover;
 }
+
+
 
 .footer {
     background-color: #039f00;
     height: 100px;
     display: flex;
 }
-
 .footer .container{
     display: flex;
     justify-content: center;

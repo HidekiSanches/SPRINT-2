@@ -1,4 +1,4 @@
-*{
+    *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -47,6 +47,18 @@ a{
     background-color: white;
     color: #039f00;
 }
+
+.header .container .box {
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: baseline;
+    text-align: center;
+    align-items: center;
+    flex-direction: center;
+}
+
 .here {
     font-weight: 1000;
     color: #039f00;
@@ -60,12 +72,15 @@ a{
 }
 
 .footer {
-    background-color: #039f00;
+    background-color: white;
     height: 100px;
     display: flex;
 }
-
 .footer .container{
     display: flex;
     justify-content: center;
+}
+
+.footer .container p {
+    color: #039f00;
 }

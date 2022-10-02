@@ -1,2 +1,2 @@
 # TechFarm
-Repositório TechFarm - Néos Demétres
+Repositório TechFarm - Néos Demétris
