@@ -55,12 +55,20 @@ input {
 .box input:focus {
     border-color: #039f00;
 }
-.box input[type="submit"]{
+.box button{
+    display: block;
+    border-radius: 20px;
+    margin-top: 5px;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: .9rem;
+    transition: 2s;
     background-color: #039f00;
     color: white;
     border: none;
     border-radius: 20px;
-    height: 40px;
     cursor: pointer;
 }
 a {

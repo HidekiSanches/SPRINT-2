@@ -53,11 +53,13 @@ a{
     border-bottom: #039f00 2px solid;
 }
 .background {
-    height: 700px;
+    height: 1459px;
     padding: 5vh;
     background-image: linear-gradient( white, #039f00);
     background-size: cover;
+    margin-bottom: 0;
 }
+
 
 .footer {
     background-color: #039f00;

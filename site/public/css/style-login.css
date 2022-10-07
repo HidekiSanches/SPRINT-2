@@ -1,31 +1,13 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Helvetica, sans-serif;
-    color: white;
-    border: none;
-}
 
-.contact {
-    background-color:  #039f00;
-    background-size: cover;
-    height: 670px;
-    display: flex;
-}
-.contact {
-    display: flex;
-    justify-content: center;
-}
-
-.contact input, label{
+input, label{
     display: block;
     width: 100%;
 }
-.contact input:focus, label:focus {
+input:focus, label:focus {
     outline: none;
 }
-.contact .box {
+.box {
+    margin-top: 50px;
     width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -35,7 +17,7 @@
     border-bottom: solid 3px #23272a;
     border-right: solid 3px #23272a;
 }
-.contact h2 {
+h2 {
     text-align: center;
     margin-bottom: 25px;
     font-size: 1.6rem;
@@ -46,14 +28,14 @@ form {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.contact .full-box {
+.full-box {
     flex: 1 1 100%;
     position: relative;
 }
-.contact .half-box {
+.half-box {
     flex: 1 1 45%;
 }
-.contact .spacing {
+.spacing {
     margin-right: 2.5%;
 }
 label {
@@ -61,35 +43,41 @@ label {
     font-size: .8rem;
     color: 	#ffffff;
 }
-.contact input {
+input {
     border-bottom: solid 2px #23272a;
     padding: 10px;
     font-size: .9rem;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     color: 	#ffffff;
     background-color: rgb(43,47,52,80%);
     border-radius: 4px;
 }
-.contact .box input:focus {
+.box input:focus {
     border-color: #039f00;
 }
-.contact .box input[type="submit"]{
+.box button{
+    display: block;
+    border-radius: 20px;
+    margin-top: 5px;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: .9rem;
+    transition: 2s;
     background-color: #039f00;
     color: white;
     border: none;
     border-radius: 20px;
-    height: 40px;
     cursor: pointer;
 }
-.contact a {
+a {
     color: #039f00;
 }
-textarea {
-    border-bottom: solid 2px #23272a;
-    padding: 10px;
-    font-size: .9rem;
-    margin-bottom: 30px;
-    color: 	#ffffff;
-    background-color: rgb(43,47,52,80%);
-    border-radius: 4px;
+#agreement{
+    margin-right: 5px;
+}
+#agreement, #agreement-label {
+    display: inline-block;
+    width: auto;
 }

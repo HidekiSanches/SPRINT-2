@@ -6,7 +6,7 @@
     background-image: url("assets/banner.jpg");
     background-size: cover;
     border-radius: 4px;
-
+    background-attachment: fixed;
  }
 
  .banner .container{
@@ -33,7 +33,7 @@
 .social {
     margin-top: 10px;
     background-color: rgb(43,47,52,90%);
-    height: 300px;
+    height: 345px;
     border-radius: 10px;
     border-bottom: solid 3px #23272a;
     border-right: solid 3px #23272a;
@@ -94,9 +94,17 @@
 }
 .solucion h2 {
     color: black;
+    margin-bottom: 5px;
 }
 .solucion p {
     color: black;
+    margin-bottom: 5px;
+
+}
+.solucion h3 {
+    color: black;
+    margin-bottom: 5px;
+    
 }
 
 
