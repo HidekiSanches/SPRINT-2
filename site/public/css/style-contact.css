@@ -1,3 +1,6 @@
+
+/* removendo/mexendo alguns styles bases do html */
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -6,9 +9,8 @@
     color: white;
     border: none;
 }
-
 .contact {
-    background-color:  #039f00;
+    background-color:  #1C66A6;
     background-size: cover;
     height: 670px;
     display: flex;
@@ -17,7 +19,6 @@
     display: flex;
     justify-content: center;
 }
-
 .contact input, label{
     display: block;
     width: 100%;
@@ -66,12 +67,12 @@ label {
     padding: 10px;
     font-size: .9rem;
     margin-bottom: 30px;
-    color: 	#ffffff;
+    color:	#ffffff;
     background-color: rgb(43,47,52,80%);
     border-radius: 4px;
 }
 .contact .box input:focus {
-    border-color: #039f00;
+    border-color: #1C66A6;
 }
 .contact .box button{
     display: block;
@@ -83,14 +84,14 @@ label {
     margin-top: 10px;
     font-size: .9rem;
     transition: 2s;
-    background-color: #039f00;
-    color: white;
+    background-color: #1C66A6;
+    color: #ffffff;
     border: none;
     border-radius: 20px;
     cursor: pointer;
 }
 .contact a {
-    color: #039f00;
+    color: #1C66A6;
 }
 textarea {
     border-bottom: solid 2px #23272a;

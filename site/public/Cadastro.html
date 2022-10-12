@@ -5,30 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de cadastro</title>
-    <link rel="stylesheet" href="css/style-base.css">
-    <link rel="stylesheet" href="css/style-cadastro.css">
+    <link rel="stylesheet" href="css/style-base.css">      <!--style-base (header, background, footer)-->
+    <link rel="stylesheet" href="css/style-cadastro.css">  <!--style-cadastro (box)-->
+    <link rel="icon" href="assets/Logo-transparent2.png">  <!--logo na head da pagina -->
 </head>
 <body>
+
+    <!-- header com a logo, nome da empresa e a navbar linkando as paginas -->
+
     <div class="header">
         <div class="container">
-            <img src="assets/Logo-transparent.png" alt="" width="100px">
-            <h1>Néos Demétris</h1>
-            <ul class="navbar">
-                <li class=""><a href="Index.html">Inicial</a></li>
-                <li class=""><a href="Simulador.html">Simulador</a></li>
+            <div class="logo">
+                <img src="assets/Logo-transparent2.png" alt="" width="100px"> <!-- tag <img> com a nossa logo em png com um tamanho de 100px -->
+                <h1>Deméter</h1>
+            </div>
+            <ul class="navbar">                                          <!-- tag <ul> geralmente usada para lista de itens, listando a nossa navbar -->
+                <li class=""><a href="Index.html">Inicial</a></li>       <!-- tag <li> geralmente usada para lista de itens, representando um item da lista -->
+                <li class=""><a href="Simulador.html">Simulador</a></li> <!-- tag <a> está sendo usada para fazer um hyperlink pra outra pagina -->
                 <li>|</li>
                 <li class=""><a href="Login.html">Login</a></li>
                 <li class="here"><a href="">Cadastro</a></li>
             </ul>
         </div>
     </div>
+
+    <!-- background é corpo do site onde vai ficar a box -->
+
     <div class="background">
         <div class="">
-            <div class="box">
+            <div class="box"> <!-- box do cadastro-->
                 <h2>Cadastro</h2>
-                <form id="register">
+                <form id="register"> <!-- tag <form> para o formulário de registro/cadastro -->
                     <div class="full-box">
-                        <label for="email">E-mail</label>
+                        <label for="email">E-mail</label> <!-- tag <label> representa uma legenda para um item da interface de usuário -->
                         <input type="email" name="email" id="email" placeholder="Digite o seu e-mail" autofocus>
                     </div>
                     <div class="half-box spacing">
@@ -36,8 +45,8 @@
                         <input type="text" name="name" id="name" placeholder="Digite o seu nome">
                     </div>
                     <div class="half-box">
-                        <label for="cnpj">CNPJ</label>
-                        <input type="text" name="cnpj" id="cnpj" placeholder="Digite o seu CNPJ">
+                        <label for="cpf">CPF</label>
+                        <input type="text" name="cnpj" id="cnpj" placeholder="Digite o seu CPF">
                     </div>
                     <div class="half-box spacing">
                         <label for="senha">Senha</label>
@@ -48,8 +57,14 @@
                         <input type="password" name="confirmation" id="confirmation" placeholder="Confirma a sua senha">
                     </div>
                     <div class="full-box">
+                        <label for="empresa">Empresa</label>
+                        <select name="empresa" id="empresa"> 
+                            <option value="">--Selecione uma empresa</option>
+                        </select>
+                    </div>
+                    <div class="full-box">
                     <input type="checkbox" name="agreement" id="agreement">  
-                    <label for="agreement" id="agreement">Eu li e aceito os <a href="http://www.pudim.com.br/">termos de uso</a></label>
+                    <label for="agreement" id="agreement">Eu li e aceito os <a href="">termos de uso</a></label>
                 </div>
                 <div class="full-box">
                     <button>Cadastrar</button>
@@ -59,9 +74,12 @@
             <p class="error-validation template"></p>
         </div>
     </div>
+
+    <!-- footer do site -->
+    
 <div class="footer">
     <div class="container">
-        <p>Néo Demetris Enterprises ®</p>
+        <i>&copy; 2022 Deméter &reg; todos os direitos reservados</i>
     </div>
 </div>
 </body>

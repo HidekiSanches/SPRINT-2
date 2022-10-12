@@ -1,4 +1,6 @@
 
+/* removendo/mexendo alguns styles bases do html */
+
 input, label{
     display: block;
     width: 100%;
@@ -6,8 +8,12 @@ input, label{
 input:focus, label:focus {
     outline: none;
 }
+select{
+    display: block;
+    width: 100%;
+}
 .box {
-    margin-top: 50px;
+    margin-top: 0px;
     width: 500px;
     margin-left: auto;
     margin-right: auto;
@@ -53,7 +59,7 @@ input {
     border-radius: 4px;
 }
 .box input:focus {
-    border-color: #039f00;
+    border-color: #1C66A6;
 }
 .box button{
     display: block;
@@ -65,15 +71,26 @@ input {
     margin-top: 10px;
     font-size: .9rem;
     transition: 2s;
-    background-color: #039f00;
+    background-color: #1C66A6;
     color: white;
     border: none;
     border-radius: 20px;
     cursor: pointer;
 }
 a {
-    color: #039f00;
+    color: #1C66A6;
 }
+select {
+    border-bottom: solid 2px #23272a;
+    padding: 10px;
+    font-size: .9rem;
+    margin-bottom: 40px;
+    color: rgb(128, 128, 128);
+    background-color: rgb(43,47,52,80%);
+    border-radius: 4px
+}
+
+
 #agreement{
     margin-right: 5px;
 }

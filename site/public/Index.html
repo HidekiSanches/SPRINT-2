@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela inicial</title>
-    <link rel="stylesheet" href="css/style-base-Inicial.css">
-    <link rel="stylesheet" href="css/style-inicial.css">
-    <link rel="stylesheet" href="css/style-contact.css">
+    <link rel="icon" href="assets/Logo-transparent2.png">     <!--logo na head da pagina -->
+    <link rel="stylesheet" href="css/style-base-Inicial.css"> <!--style-base (header, background, footer)-->
+    <link rel="stylesheet" href="css/style-inicial.css">      <!--style-inicial (banner, sobre nós, box(missão,visão,valores), solução, equipe)-->
+    <link rel="stylesheet" href="css/style-contact.css">      <!--style-contact (box de contato)-->
 </head>
+
 <body>
+
+    <!-- header com a logo, nome da empresa e a navbar linkando as paginas -->
+
     <div class="header">
         <div class="container">
-            <img src="assets/Logo-transparent.png" alt="" width="100px">
-            <h1>Néos Demétris</h1>
+            <div class="logo">
+                <img src="assets/logo2.png" alt="Logo empresarial 'Deméter'" width="100px">
+                <h1>Deméter</h1>
+            </div>
             <ul class="navbar">
                 <li class="here"><a href="">Inicial</a></li>
                 <li class=""><a href="Simulador.html">Simulador</a></li>
@@ -23,109 +31,142 @@
             </ul>
         </div>
     </div>
+
+    <!-- banner com a frase -->
+
     <div class="banner">
         <div class="container">
             <p><span>Seu silo, nossa prioridade. Seu controle em apenas um clique!</span></p>
         </div>
     </div>
-<div class="background">
-    <div class="we">
-        <div class="container">
-            <h2>Quem somos nós?</h2>
-            <p>A Néo Demetris, é uma empresa de tecnologia com visão na área de agricultura,
-                desenvolvendo soluções IoT com a finalidade de monitorar temperaturas e umidade em diversos tipos de produtos, 
-                estamos atuando no mercado desde 2004 com grandes projetos homologados com excelência </p>
+
+    <!-- background é corpo do site-->
+
+    <div class="background">
+
+        <!-- we (sobre nós)-->
+
+        <div class="we">
+            <div class="imagem">
+            <div class="container">
+                <h2>Quem somos nós?</h2>
+                <p>A Deméter, é uma empresa de tecnologia com visão na área de agricultura,
+                    desenvolvendo soluções IoT com a finalidade de monitorar temperaturas e umidade em diversos tipos de
+                    produtos,
+                    estamos atuando no mercado desde 2004 com grandes projetos homologados com excelência </p>
+            </div>
+                <img src="assets/imgreferencia.png" alt="">
+            </div>
         </div>
-    </div>
-    <div class="social">
-        <div class="container">
-            <div class="boxes">
-                <div class="box">
-                    <img src="assets/mission.png" alt="">
-                    <h4>Missão</h4>
-                    <p>Auxiliar o ramo da agricultura a evitar perdas e 
-                    aumentar a qualidade dos produtos!</p>
+
+        <!-- social é a box com a missão visão e valores-->
+
+        <div class="social">
+            <div class="container">
+                <div class="boxes">
+                    <div class="box">
+                        <img src="assets/mission.png" alt="">
+                        <h4>Missão</h4>
+                        <p>Auxiliar o ramo da agricultura a evitar perdas e
+                            aumentar a qualidade dos produtos!</p>
+                    </div>
+                    <div class="box">
+                        <img src="assets/vision.png" alt="">
+                        <h4>Visão</h4>
+                        <p>Nos tornar a empresa multinacional no mercado de tecnologia oferecendo soluções IoT!</p>
+                    </div>
+                    <div class="box">
+                        <img src="assets/values2.png" alt="">
+                        <h4>Valores</h4>
+                        <p> Respeito e confiança com o cliente, sustentabilidade com o planeta e empatia com o ser
+                            humano!</p>
+                    </div>
                 </div>
-                <div class="box">
-                    <img src="assets/vision.png" alt="">
-                    <h4>Visão</h4>
-                    <p>Nos tornar a empresa multinacional no mercado de tecnologia oferecendo soluções IoT!</p>
+            </div>
+        </div>
+
+        <!-- solucion é a nossa solução (Techfarm) -->
+
+        <div class="solucion">
+            <div class="img">
+            <img src="assets/Sensor.jpg" alt="">
+            <div class="container">
+                <h2>Solução</h2>
+
+                <h3>TechFarm</h3>
+                <p>
+                    Desenvolvemos com a nossa equipe, um sistema IoT com a capacidade de realizar o monitoramento de
+                    temperatura e umidade em tempo real,
+                    com uma aplicação WEB e banco de dados em NUVEM, onde você cliente pode verificar todos os seus
+                    silos de soja, analisar onde está com problemas,
+                    verificar onde necessita atenção e ter análise dos seus dados tratados!
+
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <!-- squad é a box com toda a nossa equipe -->
+
+        <div class="squad">
+            <div class="container">
+                <h2>Nossa equipe</h2>
+                <div class="boxes">
+                    <div class="box">
+                        <img src="assets/squad1.jpg" alt="">
+                        <h4>Thiago Hideki</h4>
+                        <p>Full Stack</p>
+                        <a href="https://github.com/HidekiSanches" target="_blank"><img src="assets/git2.png"
+                                alt=""></a>
+                    </div>
+                    <div class="box">
+                        <img src="assets/squad2.png" alt="">
+                        <h4>Natã dos Santos</h4>
+                        <p>Front-end</p>
+                        <a href="https://github.com/NataSFSilva" target="_blank"><img src="assets/git2.png" alt=""></a>
+                    </div>
+                    <div class="box">
+                        <img src="assets/squad3.png" alt="">
+                        <h4>Johnatan Cardozo</h4>
+                        <p>Full Stack</p>
+                        <a href="https://github.com/JohnatanMoreira1" target="_blank"><img src="assets/git2.png"
+                                alt=""></a>
+                    </div>
                 </div>
-                <div class="box">
-                    <img src="assets/values2.png" alt="">
-                    <h4>Valores</h4>
-                    <p> Respeito e confiança com o cliente, sustentabilidade com o planeta e empatia com o ser humano!</p>
+                <div class="boxes">
+                    <div class="box">
+                        <img src="assets/squad3.png" alt="">
+                        <h4>Júlio Kanashiro</h4>
+                        <p>Back-end</p>
+                        <a href="https://github.com/jknss" target="_blank"><img src="assets/git2.png" alt=""></a>
+                    </div>
+                    <div class="box">
+                        <img src="assets/squad4.png" alt="">
+                        <h4>Vinicius Venancio</h4>
+                        <p>Back-end</p>
+                        <a href="https://github.com/VVenancio3" target="_blank"><img src="assets/git2.png" alt=""></a>
+                    </div>
+                    <div class="box">
+                        <img src="assets/squad6.png" alt="">
+                        <h4>Washington da Silva</h4>
+                        <p>Front-end</p>
+                        <a href="https://github.com/WashingtonFarias" target="_blank"><img src="assets/git2.png"
+                                alt=""></a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="solucion">
-        <div class="container">
-            <h2>Solução</h2>
-            
-            <h3>TechFarm</h3>
-            
-            <p>
-                Desenvolvemos com a nossa equipe, um sistema IoT com a capacidade de realizar o monitoramento de temperatura e umidade em tempo real,
-                com uma aplicação WEB e banco de dados em NUVEM, onde você cliente pode verificar todos os seus silos de soja, analisar onde está com problemas,
-                verificar onde necessita atenção e ter análise dos seus dados tratados!    
-                
-            </p>
-        </div>
-    </div>
-    <div class="squad">
-        <div class="container">
-            <h2>Nossa equipe</h2>
-            <div class="boxes">
-                <div class="box">
-                    <img src="assets/squad1.jpg" alt="">
-                    <h4>Thiago Hideki</h4>
-                    <p>Full Stack</p>
-                    <a href="https://github.com/HidekiSanches"><img src="assets/git2.png" alt=""></a>
-                </div>
-                <div class="box">
-                    <img src="assets/squad2.png" alt="">
-                    <h4>Natã dos Santos</h4>
-                    <p>Front-end</p>
-                    <a href="https://github.com/NataSFSilva"><img src="assets/git2.png" alt=""></a>
-                </div>
-                <div class="box">
-                    <img src="assets/squad3.png" alt="">
-                    <h4>Johnatan Cardozo</h4>
-                    <p>Full Stack</p>
-                    <a href="https://github.com/JohnatanMoreira1"><img src="assets/git2.png" alt=""></a>
-                </div>
-        </div>
-        <div class="boxes">
-            <div class="box">
-                <img src="assets/squad3.png" alt="">
-                <h4>Júlio Kanashiro</h4>
-                <p>Back-end</p>
-                <a href="https://github.com/jknss"><img src="assets/git2.png" alt=""></a>
-            </div>
-            <div class="box">
-                <img src="assets/squad4.png" alt="">
-                <h4>Vinicius Venancio</h4>
-                <p>Back-end</p>
-                <a href="https://github.com/VVenancio3"><img src="assets/git2.png" alt=""></a>
-            </div>
-            <div class="box">
-                <img src="assets/squad6.png" alt="">
-                <h4>Washington da Silva</h4>
-                <p>Front-end</p>
-                <a href="https://github.com/WashingtonFarias"><img src="assets/git2.png" alt=""></a>
-            </div>
-    </div>
-    </div>
-</div>
-</div>
-<div class="contact">
+
+    <!-- contact é a box de contato -->
+
+    <div class="contact">
         <div class="box">
             <h2>Contato</h2>
             <form id="contact">
                 <div class="full-box">
                     <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="Digite o seu nome" >
+                    <input type="text" name="nome" id="nome" placeholder="Digite o seu nome">
                 </div>
                 <div class="full-box">
                     <label for="email">E-mail</label>
@@ -137,7 +178,8 @@
                 </div>
                 <div class="full-box">
                     <label for="mensagem">Mensagem</label>
-                    <textarea name="mesnsagem" id="mensagem" cols="40" rows="10" maxlength="500"></textarea>
+                    <textarea name="mesnsagem" id="mensagem" cols="40" rows="10" maxlength="500"
+                        style="resize: none;"></textarea>
                 </div>
                 <div class="full-box">
                     <button>Enviar</button>
@@ -145,11 +187,15 @@
             </form>
         </div>
     </div>
-</div>
-<div class="footer">
-    <div class="container">
-        <p>Néo Demetris Enterprises ®</p>
+
+    <!-- footer do site -->
+    
+    <div class="footer">
+        <div class="container">
+            <i>&copy; 2022 Deméter &reg; todos os direitos reservados</i>
+        </div>
     </div>
-</div>
+    </div>
 </body>
+
 </html>

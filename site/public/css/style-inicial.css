@@ -1,53 +1,50 @@
 
-.banner{
+/* banner */
+
+.banner {
     color: white;
-    padding:  40px 0;
+    padding: 40px 0;
     height: 400px;
     background-image: url("assets/banner.jpg");
     background-size: cover;
-    border-radius: 4px;
-    background-attachment: fixed;
- }
-
- .banner .container{
+    background-attachment: fixed; /* deica a imagem do banner fixa na pagina */
+}
+.banner .container {
     height: 400px;
     width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
-.banner p{
+.banner p {
     font-size: 30px;
     width: 280px;
     margin-bottom: 200px;
     color: white;
- }
-
- .banner .container span{
+}
+.banner .container span {
     font-weight: 800;
     color: white;
- }
+}
 
+/* social */
 
 .social {
     margin-top: 10px;
-    background-color: rgb(43,47,52,90%);
+    background-color: rgb(43, 47, 52, 90%);
     height: 345px;
     border-radius: 10px;
     border-bottom: solid 3px #23272a;
     border-right: solid 3px #23272a;
- }
-
- .box img {
+}
+.box img {
     width: 170px;
- }
-
+}
 .social .container .boxes {
     display: flex;
 }
-
-.box{
+.box {
     margin: 25px 30px 10px 30px;
     display: flex;
     flex-direction: column;
@@ -55,36 +52,98 @@
     background-color: #23272a;
     border-radius: 10px;
     padding: 10px 10px;
-    border-bottom:black solid 2px;
-    border-right:black solid 2px;
-
+    border-bottom: black solid 2px;
+    border-right: black solid 2px;
 }
-
-.social p{
+.social p {
     color: white;
     text-align: center;
 }
-.social h4{
+.social h4 {
     margin-top: 10px;
     color: white;
 }
 
+/* we */
 
+.we .container {
+    height: 250px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+.imagem {
+    display: flex;
+    height: 300px;
+    border-radius: 10px;
+}
+.imagem img {
+    border: #1C66A6 solid 6px;
+    border-radius: 10px;
+}
 .we {
     background-color: white;
     border-radius: 4px;
     padding: 25px;
 }
 .we h2 {
-    color: black;
+    color: #1C66A6;
+    font-size: 30px;
 }
 .we p {
     color: black;
+    font-size: 23px;
 }
+
+/* squad */
 .squad {
     margin-top: 40px;
 }
+.squad {
+    margin-top: 10px;
+    background-color: rgb(43, 47, 52, 90%);
+    height: 750px;
+    border-radius: 10px;
+    border-bottom: solid 3px #23272a;
+    border-right: solid 3px #23272a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.squad .box img {
+    width: 200px;
+    border-radius: 100%;
+}
+.squad .box a img {
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+}
+.squad .box p {
+    margin-bottom: 10px;
+}
+.squad .container .boxes {
+    display: flex;
+}
+.box {
+    margin: 25px 50px 10px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #23272a;
+    border-radius: 10px;
+    padding: 10px 10px;
+    border-bottom: black solid 2px;
+    border-right: black solid 2px;
+}
+.squad .container {
+    padding: 15px;
+}
 
+
+/* solucion */
 
 .solucion {
     margin-top: 10px;
@@ -93,60 +152,35 @@
     padding: 25px;
 }
 .solucion h2 {
-    color: black;
+    color: #1C66A6;
     margin-bottom: 5px;
+    font-size: 30px;
 }
 .solucion p {
     color: black;
     margin-bottom: 5px;
+    font-size: 23px;
 
 }
 .solucion h3 {
-    color: black;
+    color: #1C66A6;
     margin-bottom: 5px;
-    
+    font-size: 25px;
 }
-
-
-.squad {
-    margin-top: 10px;
-    background-color: rgb(43,47,52,90%);
-    height: 750px;
-    border-radius: 10px;
-    border-bottom: solid 3px #23272a;
-    border-right: solid 3px #23272a;
-    display: flex;
- }
-
- .squad .box img {
-    width: 200px;
-    border-radius: 100%;
- }
- .squad .box a img {
-    width: 120px;
-    height: 30px;
-    border-radius: 10px;
- }
- .squad .box p {
-    margin-bottom: 10px;
- }
-
-.squad .container .boxes {
-    display: flex;
-}
-
-.box{
-    margin: 25px 50px 10px 50px;
+.solucion .container {
+    height: 250px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: #23272a;
-    border-radius: 10px;
-    padding: 10px 10px;
-    border-bottom:black solid 2px;
-    border-right:black solid 2px;
-
+    justify-content: center;
+    align-self: center;
 }
-.squad .container {
-    padding: 15px;
+.img {
+    display: flex;
+    height: 300px;
+    border-radius: 10px;
+}
+.img img {
+    border: #1C66A6 solid 6px;
+    border-radius: 10px;
 }
