@@ -121,13 +121,6 @@
     </div>
   </body>
   <script>
-        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    
-    let proximaAtualizacao;
-        
-    window.onload = obterDadosGrafico(1);
-
-    verificar_autenticacao();
     
     const labels = ['1', '2', '3', '4', '5']
 
@@ -294,3 +287,12 @@
     const myChart6 = new Chart(document.getElementById('myChart6'), config6)
   </script>
 </html>
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    
+    let proximaAtualizacao;
+        
+    window.onload = obterDadosGrafico(1);
+
+    verificar_autenticacao();
+</script>
