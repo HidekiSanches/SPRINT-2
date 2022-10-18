@@ -69,7 +69,7 @@ a {
 /* background do corpo do site */
 
 .background {
-    height: 700px;
+    height: auto;
     padding: 5vh;
     background-image: linear-gradient(white, #1C66A6);  /* background em degrade */
     background-size: cover;

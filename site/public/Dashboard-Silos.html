@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DashBoard</title>
+    <script src="js/funcoes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="assets/Logo-transparent2.png" />
+    <link rel="stylesheet" href="css/style-base.css" />
+    <link rel="stylesheet" href="css/style-dashboard.css" />
+    <link rel="stylesheet" href="css/style-dashboard-silos.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container">
+        <a href="Index.html"
+          ><div class="logo">
+            <img src="assets/Logo-transparent2.png" alt="" width="100px" />
+            <h1>Deméter</h1>
+          </div></a
+        >
+        <ul class="navbar">
+          <li class="">Bem vindo!</li>
+          <li class=""><span id="b_usuario">usuário</span></li>
+          <li class="">||</li>
+          <li class=""><a href="Index.html">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="background">
+      <div class="container containerstyle">
+        <div class="boxes firstbox">
+          <a href="Dashboard-Silo1.html">
+            <div class="box">
+              <canvas
+                id="myChart"
+                style="position: relative; height: 40vh; width: 40vw"
+              ></canvas>
+              <div class="lilBox">
+                <h2>Silo 1</h2>
+                <img width="40px" height="40px" src="" style="display: none" />
+              </div>
+            </div>
+          </a>
+          <a href="Dashboard-Silo2.html">
+            <div class="box">
+              <canvas
+                id="myChart2"
+                style="position: relative; height: 40vh; width: 40vw"
+              ></canvas>
+              <div class="lilBox">
+                <h2>Silo 2</h2>
+                <img
+                  width="40px"
+                  height="40px"
+                  src="https://media.giphy.com/media/JmFPCxLhTtF0NQWwFR/giphy.gif"
+                />
+              </div>
+            </div>
+          </a>
+          <a href="Dashboard-Silo3.html">
+            <div class="box">
+              <canvas
+                id="myChart3"
+                style="position: relative; height: 40vh; width: 40vw"
+              ></canvas>
+              <div class="lilBox">
+                <h2>Silo 3</h2>
+                <img width="40px" height="40px" src="" style="display: none" />
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="boxes">
+          <a href="Dashboard-Silo4.html">
+            <div class="box">
+              <canvas
+                id="myChart4"
+                style="position: relative; height: 40vh; width: 40vw"
+              ></canvas>
+              <div class="lilBox">
+                <h2>Silo 4</h2>
+                <img width="40px" height="40px" src="" style="display: none" />
+              </div>
+            </div>
+          </a>
+          <a href="Dashboard-Silo5.html">
+            <div class="box">
+              <canvas
+                id="myChart5"
+                style="position: relative; height: 40vh; width: 40vw"
+              ></canvas>
+              <div class="lilBox">
+                <h2>Silo 5</h2>
+                <img width="40px" height="40px" src="" style="display: none" />
+              </div>
+            </div>
+          </a>
+          <a href="Dashboard-Silo6.html">
+            <div class="box">
+              <canvas
+                id="myChart6"
+                style="position: relative; height: 40vh; width: 40vw"
+              ></canvas>
+              <div class="lilBox">
+                <h2>Silo 6</h2>
+                <img width="40px" height="40px" src="" style="display: none" />
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <i>&copy; 2022 Deméter &reg; todos os direitos reservados</i>
+      </div>
+    </div>
+  </body>
+  <script>
+        b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+    
+    let proximaAtualizacao;
+        
+    window.onload = obterDadosGrafico(1);
+
+    verificar_autenticacao();
+    
+    const labels = ['1', '2', '3', '4', '5']
+
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [13.0, 14.1, 15.2, 13.6, 12.3]
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 200, 255)',
+          borderColor: 'rgb(0, 200, 255)',
+          data: [11.2, 11.3, 11.2, 11.5, 11.6]
+        }
+      ]
+    }
+
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {}
+    }
+
+    const labels2 = ['1', '2', '3', '4', '5']
+
+    const data2 = {
+      labels: labels2,
+      datasets: [
+        {
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [17.7, 16.8, 11.9, 17.4, 10.2]
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 200, 255)',
+          borderColor: 'rgb(0, 200, 255)',
+          data: [12.1, 12.3, 13.0, 13.1, 09.3]
+        }
+      ]
+    }
+
+    const config2 = {
+      type: 'bar',
+      data: data2,
+      options: {}
+    }
+
+    const labels3 = ['1', '2', '3', '4', '5']
+
+    const data3 = {
+      labels: labels3,
+      datasets: [
+        {
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [13.4, 16.7, 11.2, 17.5, 10.5]
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 200, 255)',
+          borderColor: 'rgb(0, 200, 255)',
+          data: [17.4, 15.3, 13.2, 14.5, 24.2]
+        }
+      ]
+    }
+
+    const config3 = {
+      type: 'bar',
+      data: data3,
+      options: {}
+    }
+
+    const labels4 = ['1', '2', '3', '4', '5']
+
+    const data4 = {
+      labels: labels4,
+      datasets: [
+        {
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [13.2, 14.4, 11.4, 17.7, 10.2]
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 200, 255)',
+          borderColor: 'rgb(0, 200, 255)',
+          data: [16.1, 15.2, 13.2, 14.4, 20.1]
+        }
+      ]
+    }
+
+    const config4 = {
+      type: 'bar',
+      data: data4,
+      options: {}
+    }
+
+    const labels5 = ['1', '2', '3', '4', '5']
+
+    const data5 = {
+      labels: labels5,
+      datasets: [
+        {
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [14.4, 16.1, 11.4, 17.2, 10.8]
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 200, 255)',
+          borderColor: 'rgb(0, 200, 255)',
+          data: [11.0, 15.3, 13.8, 14.5, 20.6]
+        }
+      ]
+    }
+
+    const config5 = {
+      type: 'bar',
+      data: data5,
+      options: {}
+    }
+
+    const labels6 = ['1', '2', '3', '4', '5']
+
+    const data6 = {
+      labels: labels6,
+      datasets: [
+        {
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [23.2, 21.2, 14.4, 16.2, 12.5]
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 200, 255)',
+          borderColor: 'rgb(0, 200, 255)',
+          data: [21.9, 21.9, 19.8, 18.4, 14.1]
+        }
+      ]
+    }
+
+    const config6 = {
+      type: 'bar',
+      data: data6,
+      options: {}
+    }
+  </script>
+  <script>
+    const myChart = new Chart(document.getElementById('myChart'), config)
+    const myChart2 = new Chart(document.getElementById('myChart2'), config2)
+    const myChart3 = new Chart(document.getElementById('myChart3'), config3)
+    const myChart4 = new Chart(document.getElementById('myChart4'), config4)
+    const myChart5 = new Chart(document.getElementById('myChart5'), config5)
+    const myChart6 = new Chart(document.getElementById('myChart6'), config6)
+  </script>
+</html>

@@ -10,10 +10,11 @@ email varchar (60),
 cnpj char(14) unique,
 tipo varchar(7), constraint chktipo check(tipo in ("Matriz", "Filial" )));
 
-CREATE TABLE funcionario(
-idfuncionario int,
+CREATE TABLE usuario(
+idfuncionario int auto_increment,
 email varchar(60),
 nome varchar(40),
+cpf char(11),
 senha varchar(40),
 fkempresa int,
 constraint cfkempresa foreign key (fkempresa) references empresa(idempresa)

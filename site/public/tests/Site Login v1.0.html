@@ -1,50 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pr-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela de login</title>
-    <link rel="stylesheet" href="Estilo2.css">
+    <title>Login</title>
+    <link rel="icon" href="assets/Logo-transparent2.png"> <!--logo na head da pagina -->
+    <link rel="stylesheet" href="css/style-base.css">     <!--style-base (header, background, footer)-->
+    <link rel="stylesheet" href="css/style-login.css">    <!--style-login (box)-->
 </head>
 <body>
+
+    <!-- header com a logo, nome da empresa e a navbar linkando as paginas -->
+
     <div class="header">
         <div class="container">
-            <img src="D:\Estudo\Faculdade\Sprint\SPRINT 2\assets\logo.jpeg" alt="" width="100px">
-            <h1>Néos Demétris</h1>
+            <a href="Index.html"><div class="logo">
+                 <img src="assets/Logo-transparent2.png" alt="" width="100px">
+                <h1>Deméter</h1>
+            </div></a>
             <ul class="navbar">
-                <li><input type="submit" id="bnt_submit1" value="Inicial"></li>
-                <li><input type="submit" id="bnt_submit2" value="Simulador"></li>
+                <li class=""><a href="Index.html">Inicial</a></li>
+                <li class=""><a href="Simulador.html">Simulador</a></li>
                 <li>|</li>
-                <li><input type="submit" id="bnt_submit3" value="Login"></li>
-                <li><input type="submit" id="bnt_submit" value="Cadastro"></li>
+                <li class="here"><a href="">Login</a></li>
+                <li class=""><a href="Cadastro.html">Cadastro</a></li>
             </ul>
         </div>
     </div>
-    <div class="cadastro">
+
+    <!-- background é corpo do site onde vai ficar a box -->
+
+    <div class="background">
+        <div class="">
             <div class="box">
-                    <h2>Login</h2>
-                    <form id="login">
-                        <div class="full_box">
-                            <label for="email">E-mail</label>
-                            <input type="email" name="email" id="email" placeholder="Digite o seu e-mail" autofocus>
-                        </div>
-                        <div class="full_box">
-                            <label for="senha">Senha</label>
-                            <input type="password" name="senha" id="senha" placeholder="Digite a sua senha" autofocus>
-                        </div>
-                        <div class="full_box">
-                            <input type="submit" id="btn_submit" value="Login">  
-                        </div>
-                    </form>
-                    </p>
-                </div>
-                <p class="error-validation template"></p>
-    </div>
-    <div class="footer">
-        <div class="container">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <h2>Login</h2>
+                <form id="login">
+                    <div class="full-box">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="ipt_email" placeholder="Digite o seu e-mail" autofocus>
+                    </div>
+                    <div class="full-box">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="ipt_senha" placeholder="Digite a sua senha" autofocus>
+                    </div>
+                    <div class="full-box">
+                        <button onclick="login()">Login</button>  
+                    </div>
+                </form>
+                </p>
+            </div>
+            <p class="error-validation template"></p>
         </div>
     </div>
+    <!-- footer do site -->
+
+<div class="footer">
+    <div class="container">
+        <i>&copy; 2022 Deméter &reg; todos os direitos reservados</i>
+    </div>
+</div>
 </body>
 </html>
+<script>
+function login() {
+    var senha = ipt_senha.value
+    var email = ipt_email.value
+    if (senha == "" || email == "") {
+        alert("Todos os campos devem ser preenchidos para que o login seja realizado!")
+    } else if (senha == "sptech" || email == "demeter@sptech.school") {
+        alert("redirencionando...")
+        open("Dashboard-Silos.html")
+    
+    } else {
+        alert(`A senha ou email estão incorretos`)
+    }
+   
+}
+
+</script>

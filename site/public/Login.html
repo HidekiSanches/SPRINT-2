@@ -8,6 +8,7 @@
     <link rel="icon" href="assets/Logo-transparent2.png"> <!--logo na head da pagina -->
     <link rel="stylesheet" href="css/style-base.css">     <!--style-base (header, background, footer)-->
     <link rel="stylesheet" href="css/style-login.css">    <!--style-login (box)-->
+    <script src="js/funcoes.js"></script>
 </head>
 <body>
 
@@ -15,10 +16,10 @@
 
     <div class="header">
         <div class="container">
-            <div class="logo">
+           <a href="Index.html"> <div class="logo">
                 <img src="assets/Logo-transparent2.png" alt="" width="100px">
                 <h1>Deméter</h1>
-            </div>
+            </div></a>
             <ul class="navbar">
                 <li class=""><a href="Index.html">Inicial</a></li>
                 <li class=""><a href="Simulador.html">Simulador</a></li>
@@ -32,10 +33,15 @@
     <!-- background é corpo do site onde vai ficar a box -->
 
     <div class="background">
-        <div class="">
+            <div class="alerta_erro">
+                <div class="card_erro" id="cardErro">
+                    <span id="mensagem_erro"></span>
+                </div>
+            </div>
+        <div class="boxes">
             <div class="box">
                 <h2>Login</h2>
-                <form id="login">
+                <div id="login">
                     <div class="full-box">
                         <label for="email">E-mail</label>
                         <input type="email" name="email" id="email" placeholder="Digite o seu e-mail" autofocus>
@@ -45,15 +51,19 @@
                         <input type="password" name="senha" id="senha" placeholder="Digite a sua senha" autofocus>
                     </div>
                     <div class="full-box">
-                        <button>Login</button>  
+                        <h5>Não tem uma conta? <a href="Cadastro.html">Cadastre-se</a></h5>
+                        <button onclick="entrar()">Login</button>  
                     </div>
-                </form>
-                </p>
+                </div>
             </div>
-            <p class="error-validation template"></p>
+            <div id="div_aguardar" class="loading-div" style="display: none;">
+                <img src="./assets/circle-loading.gif" id="loading-gif">
+            </div>
+            <div id="div_erros_login">
+                
+            </div>
         </div>
     </div>
-
     <!-- footer do site -->
 
 <div class="footer">
@@ -63,3 +73,73 @@
 </div>
 </body>
 </html>
+<script>
+function entrar() {
+        aguardar();
+        var emailVar = email.value;
+        var senhaVar = senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "/Dashboard-Silos.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DashBoard - Silo 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" href="assets/Logo-transparent2.png" />
+    <link rel="stylesheet" href="css/style-dashboard-graficos.css" />
+    <link rel="stylesheet" href="css/style-base.css" />
+    <link rel="stylesheet" href="css/style-dashboard.css" />
+    <link rel="stylesheet" href="css/style-dashboard-silos.css" />
+    <link rel="stylesheet" href="css/style-dashboard-graficos.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="container">
+        <a href="Index.html"
+          ><div class="logo">
+            <img src="assets/Logo-transparent2.png" alt="" width="100px" />
+            <h1>Deméter</h1>
+          </div></a
+        >
+        <ul class="navbar">
+          <li class="">Bem vindo!</li>
+          <li class="">User!</li>
+          <li class="">||</li>
+          <li class=""><a href="Index.html">Sair</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="background">
+      <div class="container containerstyle">
+        <div class="boxes firstbox">
+          <div class="eu">
+            <div class="voltar">
+              <div class="box" id="box1">
+                <canvas
+                  id="myChart"
+                  style="position: relative; height: 500vh; width: 400vw"
+                ></canvas>
+              </div>
+              <button onclick="voltar()" id="button1">
+                <a href="Dashboard-Silos.html">Voltar</a>
+              </button>
+            </div>
+            <div class="voltar">
+              <div class="box" id="sensordiv1" style="display: none">
+                <canvas
+                  id="myChart2"
+                  style="position: relative; height: 500vh; width: 400vw"
+                ></canvas>
+              </div>
+              <button onclick="voltar()" id="button2" style="display: none">
+                <a>Voltar</a>
+              </button>
+            </div>
+            <div class="voltar">
+              <div class="box" id="sensordiv2" style="display: none">
+                <canvas
+                  id="myChart3"
+                  style="position: relative; height: 500vh; width: 400vw"
+                ></canvas>
+              </div>
+              <button onclick="voltar()" id="button3" style="display: none">
+                <a>Voltar</a>
+              </button>
+            </div>
+            <div class="voltar">
+              <div class="box" id="sensordiv3" style="display: none">
+                <canvas
+                  id="myChart4"
+                  style="position: relative; height: 500vh; width: 400vw"
+                ></canvas>
+              </div>
+              <button onclick="voltar()" id="button4" style="display: none">
+                <a>Voltar</a>
+              </button>
+            </div>
+            <div class="voltar">
+              <div class="box" id="sensordiv4" style="display: none">
+                <canvas
+                  id="myChart5"
+                  style="position: relative; height: 500vh; width: 400vw"
+                ></canvas>
+              </div>
+              <button onclick="voltar()" id="button5" style="display: none">
+                <a>Voltar</a>
+              </button>
+            </div>
+            <div class="voltar">
+              <div class="box" id="sensordiv5" style="display: none">
+                <canvas
+                  id="myChart6"
+                  style="position: relative; height: 500vh; width: 400vw"
+                ></canvas>
+              </div>
+              <button onclick="voltar()" id="button6" style="display: none">
+                <a>Voltar</a>
+              </button>
+            </div>
+            <div class="vc" style="display: flex" id="vc">
+              <button onclick="sensor1()" style="display: block" id="vc1">
+                Sensor 1
+              </button>
+              <button onclick="sensor2()" style="display: block" id="vc2">
+                Sensor 2
+              </button>
+              <button onclick="sensor3()" style="display: block" id="vc3">
+                Sensor 3
+              </button>
+              <button onclick="sensor4()" style="display: block" id="vc4">
+                Sensor 4
+              </button>
+              <button onclick="sensor5()" style="display: block" id="vc5">
+                Sensor 5
+              </button>
+            </div>
+            <div id="show_kpi" class="mostrar_kpi">
+              <div id="kpi1" class="kpi">
+                Temp.Min
+              <p>13º</p>
+              </div>
+              <div id="kpi2" class="kpi">
+                Temp.Máx
+                <p>14º</p> 
+              </div>
+              <div id="kpi3" class="kpi">
+                Umid.Min 
+                <p>17º</p>
+              </div>
+              <div id="kpi4" class="kpi">
+                Umid.Máx 
+                <p>9º</p>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <i>&copy; 2022 Deméter &reg; todos os direitos reservados</i>
+      </div>
+    </div>
+  </body>
+  <script>
+    const labels = ['1', '2', '3', '4', '5']
+
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [14.4, 16.1, 11.4, 17.2, 10.8]
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 200, 255)',
+          borderColor: 'rgb(0, 200, 255)',
+          data: [11.0, 15.3, 13.8, 14.5, 20.6]
+        }
+      ]
+    }
+
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {}
+    }
+
+    const labels2 = ['9:45', '10:45', '11:45', '12:45', '13:45']
+
+    const data2 = {
+      labels: labels2,
+      datasets: [
+        {
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [17.7, 16.8, 11.9, 17.4, 10.2]
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 200, 255)',
+          borderColor: 'rgb(0, 200, 255)',
+          data: [12.1, 12.3, 13.0, 13.1, 09.3]
+        }
+      ]
+    }
+
+    const config2 = {
+      type: 'line',
+      data: data2,
+      options: {}
+    }
+
+    const labels3 = ['9:45', '10:45', '11:45', '12:45', '13:45']
+
+    const data3 = {
+      labels: labels3,
+      datasets: [
+        {
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [13.4, 16.7, 11.2, 17.5, 10.5]
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 200, 255)',
+          borderColor: 'rgb(0, 200, 255)',
+          data: [17.4, 15.3, 13.2, 14.5, 24.2]
+        }
+      ]
+    }
+
+    const config3 = {
+      type: 'line',
+      data: data3,
+      options: {}
+    }
+
+    const labels4 = ['9:45', '10:45', '11:45', '12:45', '13:45']
+
+    const data4 = {
+      labels: labels4,
+      datasets: [
+        {
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [13.2, 14.4, 11.4, 17.7, 10.2]
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 200, 255)',
+          borderColor: 'rgb(0, 200, 255)',
+          data: [16.1, 15.2, 13.2, 14.4, 20.1]
+        }
+      ]
+    }
+
+    const config4 = {
+      type: 'line',
+      data: data4,
+      options: {}
+    }
+
+    const labels5 = ['9:45', '10:45', '11:45', '12:45', '13:45']
+
+    const data5 = {
+      labels: labels5,
+      datasets: [
+        {
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [14.4, 16.1, 11.4, 17.2, 10.8]
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 200, 255)',
+          borderColor: 'rgb(0, 200, 255)',
+          data: [11.0, 15.3, 13.8, 14.5, 20.6]
+        }
+      ]
+    }
+
+    const config5 = {
+      type: 'line',
+      data: data5,
+      options: {}
+    }
+
+    const labels6 = ['9:45', '10:45', '11:45', '12:45', '13:45']
+
+    const data6 = {
+      labels: labels6,
+      datasets: [
+        {
+          label: 'Temperatura',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [23.2, 21.2, 14.4, 16.2, 12.5]
+        },
+        {
+          label: 'Umidade',
+          backgroundColor: 'rgb(0, 200, 255)',
+          borderColor: 'rgb(0, 200, 255)',
+          data: [21.9, 21.9, 19.8, 18.4, 14.1]
+        }
+      ]
+    }
+
+    const config6 = {
+      type: 'line',
+      data: data6,
+      options: {}
+    }
+  </script>
+  <script>
+    const myChart = new Chart(document.getElementById('myChart'), config)
+
+    const myChart2 = new Chart(document.getElementById('myChart2'), config2)
+    const myChart3 = new Chart(document.getElementById('myChart3'), config3)
+    const myChart4 = new Chart(document.getElementById('myChart4'), config4)
+    const myChart5 = new Chart(document.getElementById('myChart5'), config5)
+    const myChart6 = new Chart(document.getElementById('myChart6'), config6)
+  </script>
+  <script>
+    function sensor1() {
+      vc.style.display = 'none'
+      show_kpi.style.display='block'
+      box1.style.display = 'none'
+      sensordiv1.style.display = 'flex'
+      sensordiv2.style.display = 'none'
+      sensordiv3.style.display = 'none'
+      sensordiv4.style.display = 'none'
+      sensordiv5.style.display = 'none'
+      button1.style.display = 'none'
+      button2.style.display = 'flex'
+      button3.style.display = 'none'
+      button4.style.display = 'none'
+      button5.style.display = 'none'
+      button6.style.display = 'none'
+    }
+    function sensor2() {
+      vc.style.display = 'none'
+      show_kpi.style.display='block'
+      box1.style.display = 'none'
+      sensordiv2.style.display = 'flex'
+      sensordiv1.style.display = 'none'
+      sensordiv3.style.display = 'none'
+      sensordiv4.style.display = 'none'
+      sensordiv5.style.display = 'none'
+      button1.style.display = 'none'
+      button2.style.display = 'none'
+      button6.style.display = 'none'
+      button4.style.display = 'none'
+      button5.style.display = 'none'
+      button3.style.display = 'flex'
+    }
+    function sensor3() {
+      vc.style.display = 'none'
+      show_kpi.style.display='block'
+      box1.style.display = 'none'
+      sensordiv3.style.display = 'flex'
+      sensordiv2.style.display = 'none'
+      sensordiv1.style.display = 'none'
+      sensordiv4.style.display = 'none'
+      button1.style.display = 'none'
+      button2.style.display = 'none'
+      button3.style.display = 'none'
+      button6.style.display = 'none'
+      button5.style.display = 'none'
+      button4.style.display = 'flex'
+    }
+    function sensor4() {
+      vc.style.display = 'none'
+      show_kpi.style.display='block'
+      box1.style.display = 'none'
+      sensordiv4.style.display = 'flex'
+      sensordiv2.style.display = 'none'
+      sensordiv3.style.display = 'none'
+      sensordiv1.style.display = 'none'
+      sensordiv5.style.display = 'none'
+      button1.style.display = 'none'
+      button2.style.display = 'none'
+      button3.style.display = 'none'
+      button4.style.display = 'none'
+      button6.style.display = 'none'
+      button5.style.display = 'flex'
+    }
+    function sensor5() {
+      vc.style.display = 'none'
+      show_kpi.style.display='block'
+      box1.style.display = 'none'
+      sensordiv5.style.display = 'flex'
+      sensordiv2.style.display = 'none'
+      sensordiv3.style.display = 'none'
+      sensordiv4.style.display = 'none'
+      sensordiv1.style.display = 'none'
+      button1.style.display = 'none'
+      button2.style.display = 'none'
+      button3.style.display = 'none'
+      button4.style.display = 'none'
+      button5.style.display = 'none'
+      button6.style.display = 'flex'
+    }
+
+    function voltar() {
+      vc.style.display = 'flex'
+      show_kpi.style.display='none'
+      box1.style.display = 'flex'
+      sensordiv1.style.display = 'none'
+      sensordiv2.style.display = 'none'
+      sensordiv3.style.display = 'none'
+      sensordiv4.style.display = 'none'
+      sensordiv5.style.display = 'none'
+      button1.style.display = 'flex'
+      button2.style.display = 'none'
+      button3.style.display = 'none'
+      button4.style.display = 'none'
+      button5.style.display = 'none'
+      button6.style.display = 'none'
+    }
+  </script>
+</html>

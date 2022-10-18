@@ -1,0 +1,67 @@
+.eu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 800PX;
+}
+
+.vc {
+  display: flex;
+  flex-direction: column;
+}
+
+.vc button {
+  height: auto;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+  background-color: #1C66A6;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+
+.firstbox {
+  padding-bottom: 0px;
+  border-radius: 10px;
+}
+
+.voltar button {
+  height: auto;
+  font-size: 20px;
+  background-color: #1C66A6;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 3px;
+}
+.voltar a{
+  color: white;
+}
+
+.mostrar_kpi{
+display: flex;
+flex-direction: row;
+margin-left: 90px;
+display: none;
+}
+
+
+.kpi{
+background-color: #1C66A6;
+color: white;
+height: 80px;
+width: 80px;
+margin-right: 5px;
+border-radius: 5px;
+margin-bottom: 5px;
+padding: 5px;
+}
+
+.kpi p {
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+}

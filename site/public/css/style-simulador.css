@@ -1,7 +1,7 @@
 
 .full-box h2{
     margin-bottom: 25px;
-    color: white;
+    color: #1C66A6;
     font-size: 1.6rem;
     text-align: center;
 }
@@ -10,13 +10,13 @@
 margin-top: 30px;
 width: 500px;
 height: 400px; 
-background-color: rgb(43,47,52,90%);
+background-color: rgba(255, 255, 255, 0.9);
 display: flex;
 flex-direction: column;
 border-radius: 10px;
 padding: 25px;
-border-bottom: solid 3px #23272a;
-border-right: solid 3px #23272a;
+border-bottom: solid 3px  #4884b3;
+border-right: solid 3px #639cc7;
 }
 
 .backgroundsimu {
@@ -30,7 +30,7 @@ border-right: solid 3px #23272a;
 }
 .full-box span {
     font-size: .8rem;
-    color: white;
+    color: #1C66A6;
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -41,9 +41,9 @@ width: 100%;
 padding: 10px;
 border-radius: 4px;
 margin-bottom: 40px;
-border-bottom: solid 2px #23272a;
-background-color: rgb(43,47,52,80%);
-color: white;
+border-bottom: solid 2px #87a3b8;
+background-color:  rgba(177, 194, 214, 0.8);
+color: black;
 margin-bottom: 10px;
 font-size: .9rem;
 }
@@ -70,25 +70,25 @@ button{
     padding: 25px;
     width: 490px;
     height: 440px;
-    background-color: rgb(43,47,52,90%);
+    background-color: rgba(255, 255, 255, 0.9);
     display: flex;
     display: none;
     border-radius: 10px;
     font-size: .8rem;
-    border-bottom: solid 3px #23272a;
-    border-right: solid 3px #23272a;
+    border-bottom: solid 3px #4884b3;
+    border-right: solid 3px #639cc7;
 }
 
 .texto-resposta{
     border-bottom: 15px;
     font-size: 18px;
-    color: white;
+    color: black;
 
 }
 
 .texto-resposta h2 {
     border-bottom: 10px;
-    color: red;
+    color: rgb(45, 250, 4);
     font-size: 1.6rem;
 
 }
@@ -96,7 +96,7 @@ button{
 .texto-resposta b {
     border-bottom: 10px;
     font-size: 1.6rem;
-    color: #1fa42a;
+    color: #ff0000;
 
 }
 
