@@ -23,16 +23,16 @@ void loop()
 */
 float umidade = dht_1.readHumidity();
 float temperatura = dht_1.readTemperature();
-float temperaturaProjeto = 8.3 * temperatura - (215.83);
-float umidadeProjeto = 0.42 * umidade - (17.94);
+float temperaturaProjeto = 7.5 * temperatura - (232.5);
+float umidadeProjeto = 3.00 * umidade - (99);
 float umidade1 = umidadeProjeto * 1.10;
-float temperatura1 = temperatura * 1.10;
+float temperatura1 = temperaturaProjeto * 1.10;
 float umidade2 = umidadeProjeto * 0.90;
-float temperatura2 = temperatura * 0.90;
+float temperatura2 = temperaturaProjeto * 0.90;
 float umidade3 = umidadeProjeto * 1.40;
-float temperatura3 = temperatura * 1.40;
+float temperatura3 = temperaturaProjeto * 1.40;
 float umidade4 = umidadeProjeto * 0.60;
-float temperatura4 = temperatura * 0.60;
+float temperatura4 = temperaturaProjeto * 0.60;
 if (isnan(temperatura) or isnan(umidade))
 {
 Serial.println("Erro ao ler o DHT");
@@ -67,20 +67,17 @@ Serial.println(";");
 }
 /**
  * * Bloco do LM35
-
 leitura_lm35 = analogRead(lm35_pin);
 temperatura = leitura_lm35 * (5.0/1023) * 100;
 Serial.print(temperatura);
 Serial.print(";");
 /**
 * Bloco do LDR5
-
 leitura_ldr = analogRead(ldr_pin);
 Serial.print(leitura_ldr);
 Serial.print(";");
 /**
 * Bloco do TCRT5000
-
 if(digitalRead(switch_pin) == LOW){
 Serial.println(1);
 }
