@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DashBoard - Silo 1</title>
+    <title>DashBoard - Silo 2</title>
+    <script src="js/funcoes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="icon" href="assets/Logo-transparent2.png" />
     <link rel="stylesheet" href="css/style-dashboard-graficos.css" />
@@ -25,7 +26,7 @@
         >
         <ul class="navbar">
           <li class="">Bem vindo!</li>
-          <li class="">User!</li>
+          <li class=""><span id="b_usuario" style="color: #1C66a6">usuário</span></li>
           <li class="">||</li>
           <li class=""><a href="Index.html">Sair</a></li>
         </ul>
@@ -103,19 +104,19 @@
             </div>
             <div class="vc" style="display: flex" id="vc">
               <button onclick="sensor1()" style="display: block" id="vc1">
-                Sensor 1
+                Área 1
               </button>
               <button onclick="sensor2()" style="display: block" id="vc2">
-                Sensor 2
+                Área 2
               </button>
               <button onclick="sensor3()" style="display: block" id="vc3">
-                Sensor 3
+                Área 3
               </button>
               <button onclick="sensor4()" style="display: block" id="vc4">
-                Sensor 4
+                Área 4
               </button>
               <button onclick="sensor5()" style="display: block" id="vc5">
-                Sensor 5
+                Área 5
               </button>
             </div>
             <div id="show_kpi" class="mostrar_kpi">
@@ -411,3 +412,12 @@
     }
   </script>
 </html>
+<script>
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+  
+  let proximaAtualizacao;
+      
+  window.onload = obterDadosGrafico(1);
+
+  verificar_autenticacao();
+</script>

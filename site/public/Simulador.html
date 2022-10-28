@@ -1,4 +1,4 @@
-1<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ptbr">
 <head>
     <meta charset="UTF-8">
@@ -45,19 +45,21 @@
             <div class="full-box" id="pergunta">
             <h2>Simulador Financeiro</h2>
             
-            <span>Hectares </span><input id="qtdhec" class="" placeholder="Digite a sua quantidade de hectares" autofocus> 
-            <span>Custo</span><input id="custhec" class="" placeholder="Digite o seu custo de plantil por hectare">
-            <span>Valor de venda</span><input id="vendsaca" class="" placeholder="Digite o valor de venda por saca"> 
+            <span>Insira quantos hectares de plantação você possui:</span><input id="qtdhec" class="" placeholder="Digite a sua quantidade de hectares" autofocus> 
+            <span>Insira o custo por Hectare:</span><input id="custhec" class="" placeholder="Digite o seu custo de plantil por hectare">
+            <span>Valor de venda por saca:</span><input id="vendsaca" class="" placeholder="Digite o valor de venda por saca"> 
 
             <button onclick="validar()">Calcular</button>
         
         </div>
+        <div class="boxes">
 
-        <div class="show-box" id="resposta">
-            <span id="mostrar" class="texto-resposta"></span>
-
+            <div class="show-box" id="resposta">
+                <span id="mostrar" class="texto-resposta"></span>
+                
+            </div>
         </div>
-    
+            
     
     </div>
 
@@ -73,14 +75,19 @@
 
 function validar(){
 
-
+    var venda = vendsaca.value;
+    var custo = custhec.value;
+    var qtdhectare = qtdhec.value;
 
 if (qtdhec.value == "" || custhec.value == "" || vendsaca.value == ""){
 alert("Por favor, preencha todos os campos!")
 }
 else if(qtdhec.value == 0 || custhec.value == 0 || vendsaca.value == 0){
 alert("Digite um número válido")
-}   
+} 
+else if(Number.isNaN(venda) || Number.isNaN(custo) || Number.isNaN (qtdhectare)){
+alert("Digite um caracter numérico")
+}  
 else {
     calcular();
 }
@@ -108,14 +115,21 @@ else {
         resposta.style.display= "block";
 
         
-        mostrar.innerHTML=`<h2>Sem a nossa solução: </h2> <br>`  + " " + `Você plantou ${qtdhectare} hectare(s), teve o total de ${totalplantas} de plantas por hectare,
-        custo de R$${custototal},você perdeu 52% da safra por falta de monitoramento e obteve uma receita bruta de R$ ${vendatotal},
-         onde o seu lucro foi R$ ${vendatotal - custototal}<br><br><br>`
+        mostrar.innerHTML=`<h2> <b>Sem a nossa solução: </b> </h2> <br>` + " " +`
+        ➣ Você plantou ${qtdhectare} hectare(s)<br>
+        ➣ Teve o total de ${totalplantas} de plantas por hectare <br>
+        ➣ Custo de R$${custototal.toFixed(2)} <br>
+        ➣ Você perdeu 52% da safra por falta de monitoramento! <br>
+        ➣ Obteve uma receita bruta de R$ ${vendatotal.toFixed(2)}<br>
+        ➣ Onde o seu lucro foi R$ ${(vendatotal - custototal).toFixed(2)}<br><br><br>`
 
-        mostrar.innerHTML+=`<h2> <b> Utilizando nossa solução: </b> </h2> <br>` + " " +
-         `Você plantou ${qtdhectare} hectare (s), teve o total de ${totalplantas} de plantas por hectare,
-        custo de R$${custototal}, com o nosso sistema monitorando 24 horas por dia,
-         você reduziu as suas perdas em 20% e obteve uma receita bruta de R$ ${receitabrutasistema}, onde o seu lucro foi R$ ${lucrosistema}`
+        mostrar.innerHTML+=`<h2>  Utilizando nossa solução:  </h2> <br>` + " " +`
+        ➣ Você plantou ${qtdhectare} hectare (s)<br>
+        ➣ Teve o total de ${totalplantas} de plantas por hectare <br>
+        ➣ Custo de R$${custototal.toFixed(2)} <br>
+        ➣ Com o nosso sistema monitorando 24 horas por dia, você reduziu as suas perdas em 20% <br> 
+        ➣ Obteve uma receita bruta de R$ ${receitabrutasistema.toFixed(2)}<br>
+        ➣ Onde o seu lucro foi R$ ${lucrosistema.toFixed(2)}`
         }
 
 

@@ -59,7 +59,8 @@
                 id="email"
                 placeholder="Digite o seu e-mail"
                 autofocus
-              />
+                required
+              >
             </div>
             <div class="half-box spacing">
               <label for="name">Nome</label>
@@ -68,7 +69,8 @@
                 name="name"
                 id="nome"
                 placeholder="Digite o seu nome"
-              />
+                required
+              >
             </div>
             <div class="half-box">
               <label for="cpf">CPF</label>
@@ -77,7 +79,8 @@
                 name="cpf"
                 id="cpf"
                 placeholder="Digite o seu CPF"
-              />
+                required
+              >
             </div>
             <div class="half-box spacing">
               <label for="senha">Senha</label>
@@ -86,7 +89,8 @@
                 name="senha"
                 id="senha"
                 placeholder="Digite a sua senha"
-              />
+                required
+              >
             </div>
             <div class="half-box">
               <label for="confirmation">Confirmação de senha</label>
@@ -95,11 +99,12 @@
                 name="confirmation"
                 id="confirmation"
                 placeholder="Confirma a sua senha"
-              />
+                required
+              >
             </div>
             <div class="full-box">
               <label for="empresa">Empresa</label>
-              <select name="empresa" id="empresa">
+              <select name="empresa" id="empresa" required>
                 <option value="">--Selecione uma empresa</option>
                 <option value="1">SPTech</option>
               </select>
@@ -114,17 +119,16 @@
               <h5>Tem uma conta? <a href="Login.html">Conecte-se</a></h5>
               <button onclick="cadastrar()">Cadastrar</button>
             </div>
-          </div>
-          <div id="div_aguardar" class="loading-div" style="display: none;">
-            <img src="assets/circle-loading.gif" id="loading-gif">
-          </div>
-          <div id="div_erros_login">
-            
+            <div id="div_aguardar" class="loading-div" style="display: none;">
+              <img src="assets/circle-loading.gif" id="loading-gif">
+            </div>
+            <div id="div_erros_login">
+              
+            </div>
           </div>
         </div>
       </div>
     </div>
-
     <!-- footer do site -->
 
     <div class="footer">
@@ -135,6 +139,7 @@
   </body>
 </html>
 <script>
+
     function cadastrar() {
         aguardar();
 
@@ -149,56 +154,57 @@
         var empresaVar = empresa.value;
 
         if (nomeVar == "" || emailVar == "" || CPFVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || empresaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para campos em branco)";
-            finalizarAguardar();
-            return false;
+          cardErro.style.display = "block"
+          mensagem_erro.innerHTML = "Por favor, preencha todos os campos!";
+          finalizarAguardar();
+          return false;
         }
         else {
             setInterval(sumirMensagem, 5000)
         }
-
+        
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+              "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                nomeServer: nomeVar,
-                emailServer: emailVar,
-                cpfServer: CPFVar,
-                senhaServer: senhaVar,
+              // crie um atributo que recebe o valor recuperado aqui
+              // Agora vá para o arquivo routes/usuario.js
+              nomeServer: nomeVar,
+              emailServer: emailVar,
+              cpfServer: CPFVar,
+              senhaServer: senhaVar,
                 empresaServer: empresaVar
-            })
-        }).then(function (resposta) {
+              })
+            }).then(function (resposta) {
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
                 cardErro.style.display = "block";
 
                 mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
+                
                 setTimeout(() => {
-                    window.location = "Login.html";
+                  window.location = "Login.html";
                 }, "2000")
                 
                 limpardivulario();
                 finalizarAguardar();
-            } else {
+              } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
+              }
+            }).catch(function (resposta) {
+              console.log(`#ERRO: ${resposta}`);
+              finalizarAguardar();
+            });
+            
+            return false;
+          }
+          
+          function sumirMensagem() {
+            cardErro.style.display = "none"
+          }
+        </script>
 
-        return false;
-    }
-
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    }
-</script>

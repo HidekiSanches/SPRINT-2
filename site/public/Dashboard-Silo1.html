@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DashBoard - Silo 1</title>
+    <script src="js/funcoes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="icon" href="assets/Logo-transparent2.png" />
     <link rel="stylesheet" href="css/style-dashboard-graficos.css" />
@@ -25,7 +26,7 @@
         >
         <ul class="navbar">
           <li class="">Bem vindo!</li>
-          <li class="">User!</li>
+          <li class=""><span id="b_usuario" style="color: #1C66a6">usuário</span></li>
           <li class="">||</li>
           <li class=""><a href="Index.html">Sair</a></li>
         </ul>
@@ -47,7 +48,7 @@
               </button>
             </div>
             <div class="voltar">
-              <div class="box" id="sensordiv1" style="display: none">
+              <div class="box" id="Áreadiv1" style="display: none">
                 <canvas
                   id="myChart2"
                   style="position: relative; height: 500vh; width: 400vw"
@@ -58,7 +59,7 @@
               </button>
             </div>
             <div class="voltar">
-              <div class="box" id="sensordiv2" style="display: none">
+              <div class="box" id="Áreadiv2" style="display: none">
                 <canvas
                   id="myChart3"
                   style="position: relative; height: 500vh; width: 400vw"
@@ -69,8 +70,8 @@
               </button>
             </div>
             <div class="voltar">
-              <div class="box" id="sensordiv3" style="display: none">
-                <p style="color: black;">Sensor 3</p>
+              <div class="box" id="Áreadiv3" style="display: none">
+                <p style="color: black;">Área 3</p>
                 <canvas
                   id="myChart4"
                   style="position: relative; height: 500vh; width: 400vw"
@@ -81,7 +82,7 @@
               </button>
             </div>
             <div class="voltar">
-              <div class="box" id="sensordiv4" style="display: none">
+              <div class="box" id="Áreadiv4" style="display: none">
                 <canvas
                   id="myChart5"
                   style="position: relative; height: 500vh; width: 400vw"
@@ -92,7 +93,7 @@
               </button>
             </div>
             <div class="voltar">
-              <div class="box" id="sensordiv5" style="display: none">
+              <div class="box" id="Áreadiv5" style="display: none">
                 <canvas
                   id="myChart6"
                   style="position: relative; height: 500vh; width: 400vw"
@@ -103,20 +104,20 @@
               </button>
             </div>
             <div class="vc" style="display: flex" id="vc">
-              <button onclick="sensor1()" style="display: block" id="vc1">
-                Sensor 1
+              <button onclick="Área1()" style="display: block" id="vc1">
+                Área 1
               </button>
-              <button onclick="sensor2()" style="display: block" id="vc2">
-                Sensor 2
+              <button onclick="Área2()" style="display: block" id="vc2">
+                Área 2
               </button>
-              <button onclick="sensor3()" style="display: block" id="vc3">
-                Sensor 3
+              <button onclick="Área3()" style="display: block" id="vc3">
+                Área 3
               </button>
-              <button onclick="sensor4()" style="display: block" id="vc4">
-                Sensor 4
+              <button onclick="Área4()" style="display: block" id="vc4">
+                Área 4
               </button>
-              <button onclick="sensor5()" style="display: block" id="vc5">
-                Sensor 5
+              <button onclick="Área5()" style="display: block" id="vc5">
+                Área 5
               </button>
             </div>
             
@@ -131,11 +132,11 @@
               </div>
               <div id="kpi3" class="kpi">
                 Umid.Min 
-                <p>17º</p>
+                <p>9%</p>
               </div>
               <div id="kpi4" class="kpi">
                 Umid.Máx 
-                <p>9º</p>
+                <p>17%</p>
               </div>  
             </div>
           
@@ -316,15 +317,15 @@
     const myChart6 = new Chart(document.getElementById('myChart6'), config6)
   </script>
   <script>
-    function sensor1() {
+    function Área1() {
       vc.style.display = 'none'
       show_kpi.style.display='block'
       box1.style.display = 'none'
-      sensordiv1.style.display = 'flex'
-      sensordiv2.style.display = 'none'
-      sensordiv3.style.display = 'none'
-      sensordiv4.style.display = 'none'
-      sensordiv5.style.display = 'none'
+      Áreadiv1.style.display = 'flex'
+      Áreadiv2.style.display = 'none'
+      Áreadiv3.style.display = 'none'
+      Áreadiv4.style.display = 'none'
+      Áreadiv5.style.display = 'none'
       button1.style.display = 'none'
       button2.style.display = 'flex'
       button3.style.display = 'none'
@@ -332,15 +333,15 @@
       button5.style.display = 'none'
       button6.style.display = 'none'
     }
-    function sensor2() {
+    function Área2() {
       vc.style.display = 'none'
       show_kpi.style.display='block'
       box1.style.display = 'none'
-      sensordiv2.style.display = 'flex'
-      sensordiv1.style.display = 'none'
-      sensordiv3.style.display = 'none'
-      sensordiv4.style.display = 'none'
-      sensordiv5.style.display = 'none'
+      Áreadiv2.style.display = 'flex'
+      Áreadiv1.style.display = 'none'
+      Áreadiv3.style.display = 'none'
+      Áreadiv4.style.display = 'none'
+      Áreadiv5.style.display = 'none'
       button1.style.display = 'none'
       button2.style.display = 'none'
       button6.style.display = 'none'
@@ -348,14 +349,14 @@
       button5.style.display = 'none'
       button3.style.display = 'flex'
     }
-    function sensor3() {
+    function Área3() {
       vc.style.display = 'none'
       show_kpi.style.display='block'
       box1.style.display = 'none'
-      sensordiv3.style.display = 'flex'
-      sensordiv2.style.display = 'none'
-      sensordiv1.style.display = 'none'
-      sensordiv4.style.display = 'none'
+      Áreadiv3.style.display = 'flex'
+      Áreadiv2.style.display = 'none'
+      Áreadiv1.style.display = 'none'
+      Áreadiv4.style.display = 'none'
       button1.style.display = 'none'
       button2.style.display = 'none'
       button3.style.display = 'none'
@@ -363,15 +364,15 @@
       button5.style.display = 'none'
       button4.style.display = 'flex'
     }
-    function sensor4() {
+    function Área4() {
       vc.style.display = 'none'
       show_kpi.style.display='block'
       box1.style.display = 'none'
-      sensordiv4.style.display = 'flex'
-      sensordiv2.style.display = 'none'
-      sensordiv3.style.display = 'none'
-      sensordiv1.style.display = 'none'
-      sensordiv5.style.display = 'none'
+      Áreadiv4.style.display = 'flex'
+      Áreadiv2.style.display = 'none'
+      Áreadiv3.style.display = 'none'
+      Áreadiv1.style.display = 'none'
+      Áreadiv5.style.display = 'none'
       button1.style.display = 'none'
       button2.style.display = 'none'
       button3.style.display = 'none'
@@ -379,15 +380,15 @@
       button6.style.display = 'none'
       button5.style.display = 'flex'
     }
-    function sensor5() {
+    function Área5() {
       vc.style.display = 'none'
       show_kpi.style.display='block'
       box1.style.display = 'none'
-      sensordiv5.style.display = 'flex'
-      sensordiv2.style.display = 'none'
-      sensordiv3.style.display = 'none'
-      sensordiv4.style.display = 'none'
-      sensordiv1.style.display = 'none'
+      Áreadiv5.style.display = 'flex'
+      Áreadiv2.style.display = 'none'
+      Áreadiv3.style.display = 'none'
+      Áreadiv4.style.display = 'none'
+      Áreadiv1.style.display = 'none'
       button1.style.display = 'none'
       button2.style.display = 'none'
       button3.style.display = 'none'
@@ -401,11 +402,11 @@
       show_kpi.style.display='none'
       box1.style.display = 'flex'
       show_kpi.style.display='none'
-      sensordiv1.style.display = 'none'
-      sensordiv2.style.display = 'none'
-      sensordiv3.style.display = 'none'
-      sensordiv4.style.display = 'none'
-      sensordiv5.style.display = 'none'
+      Áreadiv1.style.display = 'none'
+      Áreadiv2.style.display = 'none'
+      Áreadiv3.style.display = 'none'
+      Áreadiv4.style.display = 'none'
+      Áreadiv5.style.display = 'none'
       button1.style.display = 'flex'
       button2.style.display = 'none'
       button3.style.display = 'none'
@@ -415,3 +416,12 @@
     }
   </script>
 </html>
+<script>
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+  
+  let proximaAtualizacao;
+      
+  window.onload = obterDadosGrafico(1);
+
+  verificar_autenticacao();
+</script>
